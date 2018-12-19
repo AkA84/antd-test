@@ -1,0 +1,45 @@
+{
+  "extensions": [
+    {
+      "key": "org.civicrm.angularex",
+      "name": "Angular Example",
+      "status": "enabled",
+      "version": "1.0",
+      "type": "module",
+      "additional" : {
+        "Name (key)":	"Angular Profiles (org.civicrm.angularprofiles)",
+        "Description":	"A Utility extension that provides Profile support to AngularJS pages",
+        "Download location": "",
+        "Local path":	"/home/galleryr/www/civicrm.demo/sites/default/files/civicrm/ext/org.civicrm.angularprofiles",
+        "Documentation":	"https://github.com/ginkgostreet/org.civicrm.angularprofiles",
+        "Author": "Ginkgo Street Labs",
+        "Version":	"4.7.31-1.1.2",
+        "Released on": "2018-06-29",
+        "License":"AGPL-3.0",
+        "Development stage": "stable",
+        "Requires": "",
+        "Compatible with": "4.7 5.0",
+        "Comments":	"This extension is a utility for allowing AngularJS pages to load CiviCRM's Backbone.js-based profile editor/selector widget. It comes prebuilt with a service for loading Backbone.js and necessary files as well as an AngularJS directive to turn a standard input into the profile widget."
+      }
+    },
+    {
+      "key": "org.civicrm.shoreditch",
+      "name": "CiviCRM Bootstrap theme",
+      "status": "enabled",
+      "version": "0.1-alpha29",
+      "type": "module"
+    },
+    {
+      "key": "test.extension.manager.paymenttest",
+      "status": "disabled",
+      "version": "1.2.3",
+      "type": "payment"
+    },
+    {
+      "key": "test.extension.manager.reporttest",
+      "status": "enabled",
+      "version": "2.0.0",
+      "type": "report"
+    }
+  ]
+}
