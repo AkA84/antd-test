@@ -2,7 +2,7 @@
   "name": "antd-demo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aka84.github.io",
+  "homepage": "https://aka84.github.io/antd-test",
   "dependencies": {
     "ant-design-pro": "^2.1.1",
     "antd": "^3.11.2",
