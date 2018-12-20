@@ -113,20 +113,20 @@ export default class App extends React.Component {
 
     return (
       <>
-      <Breadcrumb>
+      <Breadcrumb style={{ marginBottom: 35 }}>
          <Breadcrumb.Item>CiviCloud</Breadcrumb.Item>
         <Breadcrumb.Item>Leave</Breadcrumb.Item>
         <Breadcrumb.Item>Leave Requests</Breadcrumb.Item>
       </Breadcrumb>
       <div>
-        <Row gutter={8}>
+        <Row gutter={8} style={{ marginBottom: 29 }}>
           <Col span={12}>
-            <h1><Icon type="calendar" />Leave Requests</h1>
+            <h1 style={{ marginBottom: 0 }}><Icon type="calendar" />Leave Requests</h1>
           </Col>
-          <Col span={12}>
+          <Col span={12} style={{ lineHeight: 3 }}>
             <div style={{ float: 'right' }}>
-              Record
-              <Button.Group>
+              <span style={{ marginRight: 11}}>Record</span>
+              <Button.Group style={{ marginRight: 11}}>
                 <Button>Absence <Icon type="user" /></Button>
                 <Button>Overtime <Icon type="clock-circle" /></Button>
               </Button.Group>
@@ -175,32 +175,32 @@ export default class App extends React.Component {
           </Col>
           <Col span={6}>
             <Card style={{ background: '#e6e6e6' }}>
-              <Card>
+              <Card style={{ marginBottom: 10 }}>
                 <Radio.Group value={this.state.radioValue} onChange={this.onRadioChange}>
                   <Radio style={radioStyle} value={1}>Assigned to me</Radio>
                   <Radio style={radioStyle} value={2}>Unassigned</Radio>
                   <Radio style={radioStyle} value={3}>View all</Radio>
                 </Radio.Group>
               </Card>
-              <Select defaultValue={2} style={{width: '100%'}}>
+              <Select defaultValue={2} style={{ width: '100%', marginBottom: 10 }}>
                 <Select.Option value={1}>Period 2017</Select.Option>
                 <Select.Option value={2}>Period 2018</Select.Option>
                 <Select.Option value={3}>Period 2019</Select.Option>
                 <Select.Option value={4}>Period 2020</Select.Option>
               </Select>
-              <Select defaultValue={1} style={{width: '100%'}}>
+              <Select defaultValue={1} style={{ width: '100%', marginBottom: 10 }}>
                 <Select.Option value={1}>Department</Select.Option>
                 <Select.Option value={2}>IT</Select.Option>
                 <Select.Option value={3}>HR</Select.Option>
                 <Select.Option value={4}>Accounting</Select.Option>
               </Select>
-              <Select defaultValue={1} style={{width: '100%'}}>
+              <Select defaultValue={1} style={{ width: '100%', marginBottom: 10 }}>
                 <Select.Option value={1}>Region</Select.Option>
                 <Select.Option value={2}>Europe</Select.Option>
                 <Select.Option value={3}>Africa</Select.Option>
                 <Select.Option value={4}>USA</Select.Option>
               </Select>
-              <DatePicker placeholder="Start Date"  style={{width: '100%'}} />
+              <DatePicker placeholder="Start Date" style={{ width: '100%', marginBottom: 10 }} />
               <Button type="primary" size="large" block>
                 Apply Filters
                 <Icon type="sync" />
