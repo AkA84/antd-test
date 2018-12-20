@@ -1,3 +1,4 @@
+import faker from 'faker';
 import React from 'react';
 import {
   Avatar,
@@ -29,10 +30,11 @@ const menu = (
 
 const dataSource = [...Array(15)].map((i, index) => ({
   key: index,
-  name: 'Mattie Wilson',
+  name: faker.name.findName(),
+  avatar: faker.image.avatar(),
   type: 'TOIL (in days)',
-  amount: '+0.5d',
-  date: '28/12/2018',
+  amount: `+${Math.random().toFixed(1)}`,
+  date: faker.date.future(),
   status: '+info required'
 }));
 
@@ -41,8 +43,8 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: (name) => (
-      <div><Avatar style={{ backgroundColor: '#BF795C' }} icon="user" /> {name}</div>
+    render: (name, props) => (
+      <div><Avatar src={props.avatar} /> {name}</div>
     )
   },
   {
@@ -55,7 +57,7 @@ const columns = [
     dataIndex: 'date',
     key: 'date',
     render: (date, props) => (
-      <div>{props.amount} {date}</div>
+      <div>{props.amount} {date.toLocaleDateString()}</div>
     )
   },
   {
@@ -77,7 +79,7 @@ const columns = [
   {
     key: 'view',
     render: () => (
-      <div>View <Icon type="right" /></div>
+      <a href="/">View <Icon type="right" /></a>
     )
   }
 ];
