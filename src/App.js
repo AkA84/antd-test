@@ -43,6 +43,7 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
+    width: 250,
     render: (name, props) => (
       <div><Avatar src={props.avatar} /> {name}</div>
     ),
@@ -56,11 +57,13 @@ const columns = [
     title: 'Type',
     dataIndex: 'type',
     key: 'type',
+    width: 150,
   },
   {
     title: 'Date',
     dataIndex: 'date',
     key: 'date',
+    width: 180,
     render: (date, props) => (
       <div>{props.amount} {date.toLocaleDateString()}</div>
     ),
