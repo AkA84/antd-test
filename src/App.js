@@ -45,7 +45,12 @@ const columns = [
     key: 'name',
     render: (name, props) => (
       <div><Avatar src={props.avatar} /> {name}</div>
-    )
+    ),
+    sorter: (a, b) => {
+      if (a.name < b.name) { return -1; }
+      if (a.name > b.name) { return 1; }
+      return 0;
+    }
   },
   {
     title: 'Type',
@@ -58,7 +63,8 @@ const columns = [
     key: 'date',
     render: (date, props) => (
       <div>{props.amount} {date.toLocaleDateString()}</div>
-    )
+    ),
+    sorter: (a, b) => b.date - a.date
   },
   {
     title: 'Status',
