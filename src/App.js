@@ -200,7 +200,7 @@ export default class App extends React.Component {
                 <Select.Option value={3}>Africa</Select.Option>
                 <Select.Option value={4}>USA</Select.Option>
               </Select>
-              <DatePicker placeholder="Start Date" style={{ width: '100%', marginBottom: 10 }} />
+              <DatePicker placeholder="Start Date" format="DD/MM/YYYY" style={{ width: '100%', marginBottom: 10 }} />
               <Button type="primary" size="large" block>
                 Apply Filters
                 <Icon type="sync" />
