@@ -126,40 +126,42 @@ export default class App extends React.Component {
         </Row>
         <Row gutter={8}>
           <Col span={18}>
-            <Row>
-              <Col span={12}>
-                <Select defaultValue={0} dropdownMatchSelectWidth={false}>
-                  <Select.Option value={0}>Actions</Select.Option>
-                  <Select.Option value={2}>Bulk Action #1</Select.Option>
-                  <Select.Option value={3}>Bulk Action #2</Select.Option>
-                  <Select.Option value={4}>Bulk Action #3</Select.Option>
-                </Select>
-              </Col>
-              <Col span={12}>
-                <div style={{ float: 'right' }}>
-                  <Select
-                    defaultValue="contacts">
-                    <Select.Option value="contacts">Contacts</Select.Option>
-                    <Select.Option value="organizations">Organizations</Select.Option>
+            <Card>
+              <Row style={{ marginBottom: 20 }}>
+                <Col span={12}>
+                  <Select defaultValue={0} dropdownMatchSelectWidth={false}>
+                    <Select.Option value={0}>Actions</Select.Option>
+                    <Select.Option value={2}>Bulk Action #1</Select.Option>
+                    <Select.Option value={3}>Bulk Action #2</Select.Option>
+                    <Select.Option value={4}>Bulk Action #3</Select.Option>
                   </Select>
-                  <Select
-                    style={{ width: 250 }}
-                    placeholder="Search / Filter"
-                    showArrow={false}>
-                    {dataSource.map(user => (
-                      <Select.Option value={user.id}>{user.name}</Select.Option>
-                    ))}
-                  </Select>
-                </div>
-              </Col>
-            </Row>
-            <Table
-              rowSelection={{}}
-              dataSource={dataSource}
-              columns={columns}
-              pagination={false}
-              scroll={{ y: 800 }}
-              size="small" />
+                </Col>
+                <Col span={12}>
+                  <div style={{ float: 'right' }}>
+                    <Select
+                      defaultValue="contacts">
+                      <Select.Option value="contacts">Contacts</Select.Option>
+                      <Select.Option value="organizations">Organizations</Select.Option>
+                    </Select>
+                    <Select
+                      style={{ width: 250 }}
+                      placeholder="Search / Filter"
+                      showArrow={false}>
+                      {dataSource.map(user => (
+                        <Select.Option key={user.key} value={user.id}>{user.name}</Select.Option>
+                      ))}
+                    </Select>
+                  </div>
+                </Col>
+              </Row>
+              <Table
+                rowSelection={{}}
+                dataSource={dataSource}
+                columns={columns}
+                pagination={false}
+                scroll={{ y: 800 }}
+                size="small" />
+            </Card>
           </Col>
           <Col span={6}>
             <Card style={{ background: '#e6e6e6' }}>
