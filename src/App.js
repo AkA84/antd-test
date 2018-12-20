@@ -28,7 +28,7 @@ const menu = (
   </Menu>
 );
 
-const dataSource = [...Array(15)].map((i, index) => ({
+const dataSource = [...Array(30)].map((i, index) => ({
   key: index,
   name: faker.name.findName(),
   avatar: faker.image.avatar(),
@@ -128,6 +128,7 @@ export default class App extends React.Component {
               dataSource={dataSource}
               columns={columns}
               pagination={false}
+              scroll={{ y: 800 }}
               size="small" />
           </Col>
           <Col span={6}>
