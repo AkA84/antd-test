@@ -1,15 +1,15 @@
 {
   "main.css": "/antd-test/static/css/main.065c712d.chunk.css",
-  "main.js": "/antd-test/static/js/main.3559591b.chunk.js",
-  "main.js.map": "/antd-test/static/js/main.3559591b.chunk.js.map",
+  "main.js": "/antd-test/static/js/main.7b8937bf.chunk.js",
+  "main.js.map": "/antd-test/static/js/main.7b8937bf.chunk.js.map",
   "static/css/1.b2e659ff.chunk.css": "/antd-test/static/css/1.b2e659ff.chunk.css",
   "static/js/1.4801612a.chunk.js": "/antd-test/static/js/1.4801612a.chunk.js",
   "static/js/1.4801612a.chunk.js.map": "/antd-test/static/js/1.4801612a.chunk.js.map",
   "runtime~main.js": "/antd-test/static/js/runtime~main.4bb76e5a.js",
   "runtime~main.js.map": "/antd-test/static/js/runtime~main.4bb76e5a.js.map",
-  "static/css/main.065c712d.chunk.css.map": "/antd-test/static/css/main.065c712d.chunk.css.map",
   "static/css/1.b2e659ff.chunk.css.map": "/antd-test/static/css/1.b2e659ff.chunk.css.map",
+  "static/css/main.065c712d.chunk.css.map": "/antd-test/static/css/main.065c712d.chunk.css.map",
   "index.html": "/antd-test/index.html",
-  "precache-manifest.6a98c885726d0558a0e47682fa29d772.js": "/antd-test/precache-manifest.6a98c885726d0558a0e47682fa29d772.js",
+  "precache-manifest.e90ee10b8224ecc63c5de768807a276e.js": "/antd-test/precache-manifest.e90ee10b8224ecc63c5de768807a276e.js",
   "service-worker.js": "/antd-test/service-worker.js"
 }
