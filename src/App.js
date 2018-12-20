@@ -94,6 +94,16 @@ const columns = [
 ];
 
 export default class App extends React.Component {
+  state = {
+    radioValue: 2
+  }
+
+  onRadioChange = (e) => {
+    this.setState({
+      radioValue: e.target.value,
+    });
+  }
+
   render() {
     const radioStyle = {
       display: 'block',
@@ -166,7 +176,7 @@ export default class App extends React.Component {
           <Col span={6}>
             <Card style={{ background: '#e6e6e6' }}>
               <Card>
-                <Radio.Group value={2}>
+                <Radio.Group value={this.state.radioValue} onChange={this.onRadioChange}>
                   <Radio style={radioStyle} value={1}>Assigned to me</Radio>
                   <Radio style={radioStyle} value={2}>Unassigned</Radio>
                   <Radio style={radioStyle} value={3}>View all</Radio>
