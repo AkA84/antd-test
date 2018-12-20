@@ -139,7 +139,7 @@ export default class App extends React.Component {
             <Card>
               <Row style={{ marginBottom: 20 }}>
                 <Col span={12}>
-                  <Select defaultValue={0} dropdownMatchSelectWidth={false}>
+                  <Select defaultValue={0} dropdownMatchSelectWidth={false} style={{ width: 200 }}>
                     <Select.Option value={0}>Actions</Select.Option>
                     <Select.Option value={2}>Bulk Action #1</Select.Option>
                     <Select.Option value={3}>Bulk Action #2</Select.Option>
