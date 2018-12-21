@@ -98,12 +98,19 @@ const rowSelection = {
 
 export default class App extends React.Component {
   state = {
-    collapsed: false
+    collapsed: false,
+    showFilters: true
   }
 
   onCollapse = () => {
     this.setState(prevState => ({
       collapsed: !prevState.collapsed
+    }))
+  }
+
+  onShowFilterToggle = value => {
+    this.setState(prevState => ({
+      showFilters: !prevState.showFilters
     }))
   }
 
@@ -140,12 +147,12 @@ export default class App extends React.Component {
               </Col>
               <Col span={12}>
                 <div style={{ float: 'right' }}>
-                  <TopForm />
+                  <TopForm cb={this.onShowFilterToggle.bind(this)} />
                 </div>
               </Col>
             </Row>
             <Row gutter={8}>
-              <Col span={18}>
+              <Col span={this.state.showFilters ? 18 : 24}>
                 <Card bodyStyle={{ paddingBottom: 0 }}>
                   <Row style={{ marginBottom: 20 }}>
                     <Col span={12}>
@@ -184,7 +191,7 @@ export default class App extends React.Component {
                     size="small" />
                 </Card>
               </Col>
-              <Col span={6}>
+              <Col span={this.state.showFilters ? 6 : 0}>
                 <Card style={{ background: '#e6e6e6' }}>
                   <Card style={{ marginBottom: 10 }}>
                     <Radio.Group value={2}>

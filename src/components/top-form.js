@@ -16,8 +16,8 @@ class TopForm extends React.Component {
         </Button.Group>
       </Form.Item>
       <Form.Item label="Show Filters">
-        {getFieldDecorator('switch', { valuePropName: 'checked' })(
-          <Switch defaultChecked size="small" />
+        {getFieldDecorator('switch', { initialValue: true, valuePropName: 'checked' })(
+          <Switch onChange={this.props.cb} size="small" />
         )}
       </Form.Item>
     </Form>)
