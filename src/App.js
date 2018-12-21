@@ -146,7 +146,7 @@ export default class App extends React.Component {
             </Row>
             <Row gutter={8}>
               <Col span={18}>
-                <Card>
+                <Card bodyStyle={{ paddingBottom: 0 }}>
                   <Row style={{ marginBottom: 20 }}>
                     <Col span={12}>
                       <Select defaultValue={0} dropdownMatchSelectWidth={false} style={{ width: 200 }}>
