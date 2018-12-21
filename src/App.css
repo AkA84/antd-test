@@ -31,6 +31,15 @@
   width: auto !important;
 }
 
+.truncate-name {
+  max-width: 120px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -47,7 +47,7 @@ const columns = [
     dataIndex: 'name',
     key: 'name',
     render: (name, props) => (
-      <div><Avatar src={props.avatar} /> {name}</div>
+      <div><Avatar src={props.avatar} style={{ marginRight: 17 }}/> <span class="truncate-name">{name}</span></div>
     ),
     sorter: (a, b) => {
       if (a.name < b.name) { return -1; }
