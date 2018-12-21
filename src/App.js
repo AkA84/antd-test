@@ -14,11 +14,11 @@ import {
   Radio,
   Row,
   Select,
-  Switch,
   Table,
 } from 'antd';
 
 import MainMenu from './components/main-menu';
+import TopForm from './components/top-form';
 
 import './App.css';
 
@@ -82,7 +82,6 @@ const columns = [
           Actions <Icon type="ellipsis" style={{ transform: 'rotate(90deg)' }} />
         </Button>
       </Dropdown>
-
     )
   },
   {
@@ -141,12 +140,7 @@ export default class App extends React.Component {
               </Col>
               <Col span={12}>
                 <div style={{ float: 'right' }}>
-                  <span style={{ marginRight: 11}}>Record</span>
-                  <Button.Group style={{ marginRight: 11}}>
-                    <Button>Absence <Icon type="user" /></Button>
-                    <Button>Overtime <Icon type="clock-circle" /></Button>
-                  </Button.Group>
-                  <Button>Show Filters<Switch defaultChecked size="small" /></Button>
+                  <TopForm />
                 </div>
               </Col>
             </Row>
