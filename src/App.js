@@ -164,7 +164,7 @@ export default class App extends React.Component {
                           <Select.Option value="organizations">Organizations</Select.Option>
                         </Select>
                         <Select
-                          style={{ width: 250 }}
+                          style={{ width: 230 }}
                           placeholder="Search / Filter"
                           showArrow={false}>
                           {dataSource.map(user => (
@@ -175,6 +175,7 @@ export default class App extends React.Component {
                     </Col>
                   </Row>
                   <Table
+                    style={{ marginLeft: -24, marginRight: -24 }}
                     rowSelection={rowSelection}
                     dataSource={dataSource}
                     columns={columns}

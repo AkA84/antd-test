@@ -22,6 +22,10 @@
   background: #F6F6F6;
 }
 
+.ant-card-body .ant-table-small {
+  border: 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
