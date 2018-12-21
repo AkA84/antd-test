@@ -38,7 +38,7 @@ const dataSource = [...Array(30)].map((i, index) => ({
   type: 'TOIL (in days)',
   amount: `+${Math.random().toFixed(1)}`,
   date: faker.date.future(),
-  status: '+info required'
+  status: '+info req.'
 }));
 
 const columns = [
@@ -46,9 +46,8 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    width: 250,
     render: (name, props) => (
-      <div><Avatar src={props.avatar} /> {name}</div>
+      <div><Avatar src={props.avatar} style={{ marginRight: 17 }} /> {name}</div>
     ),
     sorter: (a, b) => {
       if (a.name < b.name) { return -1; }
@@ -60,13 +59,11 @@ const columns = [
     title: 'Type',
     dataIndex: 'type',
     key: 'type',
-    width: 150,
   },
   {
     title: 'Date',
     dataIndex: 'date',
     key: 'date',
-    width: 180,
     render: (date, props) => (
       <div>{props.amount} {date.toLocaleDateString()}</div>
     ),
@@ -95,6 +92,10 @@ const columns = [
     )
   }
 ];
+
+const rowSelection = {
+  columnWidth: 10
+}
 
 export default class App extends React.Component {
   state = {
@@ -127,7 +128,7 @@ export default class App extends React.Component {
           </div>
           <MainMenu />
         </Layout.Sider>
-        <Layout.Content style={{ padding: '25px 50px' }}>
+        <Layout.Content style={{ padding: '25px 36px' }}>
           <Breadcrumb style={{ marginBottom: 35 }}>
              <Breadcrumb.Item>CiviCloud</Breadcrumb.Item>
             <Breadcrumb.Item>Leave</Breadcrumb.Item>
@@ -180,7 +181,7 @@ export default class App extends React.Component {
                     </Col>
                   </Row>
                   <Table
-                    rowSelection={{}}
+                    rowSelection={rowSelection}
                     dataSource={dataSource}
                     columns={columns}
                     pagination={false}
