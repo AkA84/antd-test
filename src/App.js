@@ -120,6 +120,11 @@ export default class App extends React.Component {
           breakpoint="md"
           width={240}
           theme="light">
+          <div style={{ textAlign: 'center' }}>
+            <h1>
+              <Icon type="calendar" /><br />Leave
+            </h1>
+          </div>
           <MainMenu />
         </Layout.Sider>
         <Layout.Content style={{ padding: '25px 50px' }}>
@@ -131,9 +136,9 @@ export default class App extends React.Component {
           <div>
             <Row gutter={8} style={{ marginBottom: 29 }}>
               <Col span={12}>
-                <h1 style={{ marginBottom: 0 }}><Icon type="calendar" />Leave Requests</h1>
+                <h2 style={{ marginBottom: 0 }}><Icon type="calendar" />Leave Requests</h2>
               </Col>
-              <Col span={12} style={{ lineHeight: 3 }}>
+              <Col span={12}>
                 <div style={{ float: 'right' }}>
                   <span style={{ marginRight: 11}}>Record</span>
                   <Button.Group style={{ marginRight: 11}}>
