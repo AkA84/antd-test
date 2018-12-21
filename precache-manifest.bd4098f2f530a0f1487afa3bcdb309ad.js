@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/antd-test/static/js/runtime~main.4bb76e5a.js"
   },
   {
-    "revision": "ca0a7c319dccbee3c21c",
-    "url": "/antd-test/static/js/main.ca0a7c31.chunk.js"
+    "revision": "572a108704eca7654fa3",
+    "url": "/antd-test/static/js/main.572a1087.chunk.js"
   },
   {
     "revision": "78250d25757977e4a279",
     "url": "/antd-test/static/js/1.78250d25.chunk.js"
   },
   {
-    "revision": "ca0a7c319dccbee3c21c",
+    "revision": "572a108704eca7654fa3",
     "url": "/antd-test/static/css/main.7c9b7b6c.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/antd-test/static/css/1.05381d25.chunk.css"
   },
   {
-    "revision": "566fc1755e58bdce0db74dc1eaaae0d8",
+    "revision": "3cd166b2a5e9ae884c1ca0c0b52d3648",
     "url": "/antd-test/index.html"
   }
 ];
