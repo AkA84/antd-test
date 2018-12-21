@@ -6,7 +6,8 @@ const MenuDivider = Menu.Divider;
 
 export default class MainMenu extends Component {
   state = {
-    current: 'contributions',
+    current: 'requests-1',
+    open: 'requests'
   }
 
   handleClick = (e) => {
@@ -21,6 +22,7 @@ export default class MainMenu extends Component {
       <Menu
         onClick={this.handleClick}
         selectedKeys={[this.state.current]}
+        defaultOpenKeys={[this.state.open]}
         mode="inline"
         theme="light"
       >
