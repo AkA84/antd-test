@@ -50,7 +50,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Layout>
-        <Media query="(max-width: 1024px)">
+        <Media query="(max-width: 1023px)">
           {matches => (
             <Layout.Sider
               breakpoint="md"
@@ -65,7 +65,7 @@ export default class App extends React.Component {
             </Layout.Sider>
           )}
         </Media>
-        <Media query="(max-width: 1280px)">
+        <Media query="(max-width: 1279px)">
           {matches => (
             <Layout.Content style={{ padding: matches ? '25px 16px' : '25px 36px' }}>
               <Breadcrumb style={{ marginBottom: 35 }}>

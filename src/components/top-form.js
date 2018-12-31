@@ -5,7 +5,7 @@ import { Button, Form, Icon, Switch } from 'antd'
 class TopForm extends React.Component {
   render () {
     return (
-      <Media query="(max-width: 1024px)">
+      <Media query="(max-width: 1023px)">
         {matches => (
           <Form layout="inline">
             {!matches &&

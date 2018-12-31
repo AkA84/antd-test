@@ -69,7 +69,7 @@ const rowSelection = {
 export default class MainTable extends React.Component {
   render () {
     return (
-      <Media query="(max-width: 1024px)">
+      <Media query="(max-width: 1023px)">
         {matches => (
           <Table
             style={{ marginLeft: -24, marginRight: -24 }}
