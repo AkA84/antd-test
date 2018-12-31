@@ -3,8 +3,6 @@ import { Button, Form, Icon, Switch } from 'antd'
 
 class TopForm extends React.Component {
   render () {
-    const { getFieldDecorator } = this.props.form;
-
     return (<Form layout="inline">
       <Form.Item>
         <span>Record</span>
@@ -16,9 +14,7 @@ class TopForm extends React.Component {
         </Button.Group>
       </Form.Item>
       <Form.Item label="Show Filters">
-        {getFieldDecorator('switch', { initialValue: true, valuePropName: 'checked' })(
-          <Switch onChange={this.props.cb} size="small" />
-        )}
+        <Switch checked={this.props.showFilters} onChange={this.props.cb} size="small" />
       </Form.Item>
     </Form>)
   }

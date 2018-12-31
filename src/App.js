@@ -7,6 +7,7 @@ import {
   Button,
   Card,
   Col,
+  Drawer,
   Dropdown,
   Icon,
   Layout,
@@ -108,9 +109,9 @@ export default class App extends React.Component {
     }))
   }
 
-  onShowFilterToggle = value => {
+  toggleFiltersVisibility = value => {
     this.setState(prevState => ({
-      showFilters: !prevState.showFilters
+      showFilters: value
     }))
   }
 
@@ -144,7 +145,7 @@ export default class App extends React.Component {
                     </Col>
                     <Col span={12}>
                       <div style={{ float: 'right' }}>
-                        <TopForm cb={this.onShowFilterToggle.bind(this)} />
+                        <TopForm showFilters={this.state.showFilters} cb={this.toggleFiltersVisibility.bind(this)} />
                       </div>
                     </Col>
                   </Row>
@@ -193,6 +194,17 @@ export default class App extends React.Component {
                     </Col>
                   </Row>
                 </div>
+                { matches &&
+                  <Drawer
+                  title="Filters"
+                  placement="right"
+                  closable={true}
+                  visible={this.state.showFilters}
+                  onClose={this.toggleFiltersVisibility.bind(this, false)}
+                  width="300">
+                    <FiltersAside />
+                  </Drawer>
+                }
               </>
             )}
           </Media>
