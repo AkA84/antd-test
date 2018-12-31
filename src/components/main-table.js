@@ -1,4 +1,5 @@
 import React from 'react'
+import Media from 'react-media';
 import { Avatar, Dropdown, Button, Icon, Menu, Table } from 'antd'
 
 const columns = [
@@ -68,14 +69,18 @@ const rowSelection = {
 export default class MainTable extends React.Component {
   render () {
     return (
-      <Table
-        style={{ marginLeft: -24, marginRight: -24 }}
-        rowSelection={rowSelection}
-        dataSource={this.props.data}
-        columns={columns}
-        pagination={false}
-        scroll={{ y: 800 }}
-        size="small" />
+      <Media query="(max-width: 1024px)">
+        {matches => (
+          <Table
+            style={{ marginLeft: -24, marginRight: -24 }}
+            rowSelection={rowSelection}
+            dataSource={this.props.data}
+            columns={!matches ? columns: columns.filter(column => ~['name', 'type', 'actions', 'view'].indexOf(column.key))}
+            pagination={false}
+            scroll={{ y: 800 }}
+            size="small" />
+        )}
+      </Media>
     )
   }
 }
