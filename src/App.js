@@ -190,7 +190,9 @@ export default class App extends React.Component {
                       </Card>
                     </Col>
                     <Col span={this.state.showFilters && !matches ? 6 : 0}>
-                      <FiltersAside />
+                      <Card style={{ background: '#e6e6e6' }}>
+                        <FiltersAside />
+                      </Card>
                     </Col>
                   </Row>
                 </div>

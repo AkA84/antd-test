@@ -17,7 +17,7 @@ export default class FiltersAside extends React.Component {
     };
 
     return (
-      <Card style={{ background: '#e6e6e6' }}>
+      <>
         <Card style={{ marginBottom: 10 }}>
           <Radio.Group value={2}>
             <Radio style={radioStyle} value={1}>Assigned to me</Radio>
@@ -48,7 +48,7 @@ export default class FiltersAside extends React.Component {
           Apply Filters
           <Icon type="sync" />
         </Button>
-      </Card>
+      </>
     );
   }
 }
