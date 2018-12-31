@@ -1,5 +1,6 @@
 import faker from 'faker';
 import React from 'react';
+import Media from 'react-media';
 import {
   Avatar,
   Breadcrumb,
@@ -47,7 +48,7 @@ const columns = [
     dataIndex: 'name',
     key: 'name',
     render: (name, props) => (
-      <div><Avatar src={props.avatar} style={{ marginRight: 17 }}/> <span class="truncate-name">{name}</span></div>
+      <div><Avatar src={props.avatar} style={{ marginRight: 17 }}/> <span className="truncate-name">{name}</span></div>
     ),
     sorter: (a, b) => {
       if (a.name < b.name) { return -1; }
@@ -135,98 +136,104 @@ export default class App extends React.Component {
           <MainMenu />
         </Layout.Sider>
         <Layout.Content style={{ padding: '25px 36px' }}>
-          <Breadcrumb style={{ marginBottom: 35 }}>
-             <Breadcrumb.Item>CiviCloud</Breadcrumb.Item>
-            <Breadcrumb.Item>Leave</Breadcrumb.Item>
-            <Breadcrumb.Item>Leave Requests</Breadcrumb.Item>
-          </Breadcrumb>
-          <div>
-            <Row gutter={8} style={{ marginBottom: 29 }}>
-              <Col span={12}>
-                <h2 style={{ marginBottom: 0 }}><Icon type="calendar" />Leave Requests</h2>
-              </Col>
-              <Col span={12}>
-                <div style={{ float: 'right' }}>
-                  <TopForm cb={this.onShowFilterToggle.bind(this)} />
-                </div>
-              </Col>
-            </Row>
-            <Row gutter={8}>
-              <Col span={this.state.showFilters ? 18 : 24}>
-                <Card bodyStyle={{ paddingBottom: 0 }}>
-                  <Row style={{ marginBottom: 20 }}>
+          <Media query="(max-width: 1280px)">
+            {matches => (
+              <>
+                <Breadcrumb style={{ marginBottom: 35 }}>
+                   <Breadcrumb.Item>CiviCloud</Breadcrumb.Item>
+                  <Breadcrumb.Item>Leave</Breadcrumb.Item>
+                  <Breadcrumb.Item>Leave Requests</Breadcrumb.Item>
+                </Breadcrumb>
+                <div>
+                  <Row gutter={8} style={{ marginBottom: 29 }}>
                     <Col span={12}>
-                      <Select defaultValue={0} dropdownMatchSelectWidth={false} style={{ width: 200 }}>
-                        <Select.Option value={0}>Actions</Select.Option>
-                        <Select.Option value={2}>Bulk Action #1</Select.Option>
-                        <Select.Option value={3}>Bulk Action #2</Select.Option>
-                        <Select.Option value={4}>Bulk Action #3</Select.Option>
-                      </Select>
+                      <h2 style={{ marginBottom: 0 }}><Icon type="calendar" />Leave Requests</h2>
                     </Col>
                     <Col span={12}>
                       <div style={{ float: 'right' }}>
-                        <Select
-                          defaultValue="contacts">
-                          <Select.Option value="contacts">Contacts</Select.Option>
-                          <Select.Option value="organizations">Organizations</Select.Option>
-                        </Select>
-                        <Select
-                          style={{ width: 230 }}
-                          placeholder="Search / Filter"
-                          showArrow={false}>
-                          {dataSource.map(user => (
-                            <Select.Option key={user.key} value={user.id}>{user.name}</Select.Option>
-                          ))}
-                        </Select>
+                        <TopForm cb={this.onShowFilterToggle.bind(this)} />
                       </div>
                     </Col>
                   </Row>
-                  <Table
-                    style={{ marginLeft: -24, marginRight: -24 }}
-                    rowSelection={rowSelection}
-                    dataSource={dataSource}
-                    columns={columns}
-                    pagination={false}
-                    scroll={{ y: 800 }}
-                    size="small" />
-                </Card>
-              </Col>
-              <Col span={this.state.showFilters ? 6 : 0}>
-                <Card style={{ background: '#e6e6e6' }}>
-                  <Card style={{ marginBottom: 10 }}>
-                    <Radio.Group value={2}>
-                      <Radio style={radioStyle} value={1}>Assigned to me</Radio>
-                      <Radio style={radioStyle} value={2}>Unassigned</Radio>
-                      <Radio style={radioStyle} value={3}>View all</Radio>
-                    </Radio.Group>
-                  </Card>
-                  <Select defaultValue={2} style={{ width: '100%', marginBottom: 10 }}>
-                    <Select.Option value={1}>Period 2017</Select.Option>
-                    <Select.Option value={2}>Period 2018</Select.Option>
-                    <Select.Option value={3}>Period 2019</Select.Option>
-                    <Select.Option value={4}>Period 2020</Select.Option>
-                  </Select>
-                  <Select defaultValue={1} style={{ width: '100%', marginBottom: 10 }}>
-                    <Select.Option value={1}>Department</Select.Option>
-                    <Select.Option value={2}>IT</Select.Option>
-                    <Select.Option value={3}>HR</Select.Option>
-                    <Select.Option value={4}>Accounting</Select.Option>
-                  </Select>
-                  <Select defaultValue={1} style={{ width: '100%', marginBottom: 10 }}>
-                    <Select.Option value={1}>Region</Select.Option>
-                    <Select.Option value={2}>Europe</Select.Option>
-                    <Select.Option value={3}>Africa</Select.Option>
-                    <Select.Option value={4}>USA</Select.Option>
-                  </Select>
-                  <DatePicker placeholder="Start Date" format="DD/MM/YYYY" style={{ width: '100%', marginBottom: 10 }} />
-                  <Button type="primary" size="large" block>
-                    Apply Filters
-                    <Icon type="sync" />
-                  </Button>
-                </Card>
-              </Col>
-            </Row>
-          </div>
+                  <Row gutter={8}>
+                    <Col span={this.state.showFilters && !matches ? 18 : 24}>
+                      <Card bodyStyle={{ paddingBottom: 0 }}>
+                        <Row style={{ marginBottom: 20 }}>
+                          <Col span={12}>
+                            <Select defaultValue={0} dropdownMatchSelectWidth={false} style={{ width: 200 }}>
+                              <Select.Option value={0}>Actions</Select.Option>
+                              <Select.Option value={2}>Bulk Action #1</Select.Option>
+                              <Select.Option value={3}>Bulk Action #2</Select.Option>
+                              <Select.Option value={4}>Bulk Action #3</Select.Option>
+                            </Select>
+                          </Col>
+                          <Col span={12}>
+                            <div style={{ float: 'right' }}>
+                              <Select
+                                defaultValue="contacts">
+                                <Select.Option value="contacts">Contacts</Select.Option>
+                                <Select.Option value="organizations">Organizations</Select.Option>
+                              </Select>
+                              <Select
+                                style={{ width: 230 }}
+                                placeholder="Search / Filter"
+                                showArrow={false}>
+                                {dataSource.map(user => (
+                                  <Select.Option key={user.key} value={user.id}>{user.name}</Select.Option>
+                                ))}
+                              </Select>
+                            </div>
+                          </Col>
+                        </Row>
+                        <Table
+                          style={{ marginLeft: -24, marginRight: -24 }}
+                          rowSelection={rowSelection}
+                          dataSource={dataSource}
+                          columns={columns}
+                          pagination={false}
+                          scroll={{ y: 800 }}
+                          size="small" />
+                      </Card>
+                    </Col>
+                    <Col span={this.state.showFilters && !matches ? 6 : 0}>
+                      <Card style={{ background: '#e6e6e6' }}>
+                        <Card style={{ marginBottom: 10 }}>
+                          <Radio.Group value={2}>
+                            <Radio style={radioStyle} value={1}>Assigned to me</Radio>
+                            <Radio style={radioStyle} value={2}>Unassigned</Radio>
+                            <Radio style={radioStyle} value={3}>View all</Radio>
+                          </Radio.Group>
+                        </Card>
+                        <Select defaultValue={2} style={{ width: '100%', marginBottom: 10 }}>
+                          <Select.Option value={1}>Period 2017</Select.Option>
+                          <Select.Option value={2}>Period 2018</Select.Option>
+                          <Select.Option value={3}>Period 2019</Select.Option>
+                          <Select.Option value={4}>Period 2020</Select.Option>
+                        </Select>
+                        <Select defaultValue={1} style={{ width: '100%', marginBottom: 10 }}>
+                          <Select.Option value={1}>Department</Select.Option>
+                          <Select.Option value={2}>IT</Select.Option>
+                          <Select.Option value={3}>HR</Select.Option>
+                          <Select.Option value={4}>Accounting</Select.Option>
+                        </Select>
+                        <Select defaultValue={1} style={{ width: '100%', marginBottom: 10 }}>
+                          <Select.Option value={1}>Region</Select.Option>
+                          <Select.Option value={2}>Europe</Select.Option>
+                          <Select.Option value={3}>Africa</Select.Option>
+                          <Select.Option value={4}>USA</Select.Option>
+                        </Select>
+                        <DatePicker placeholder="Start Date" format="DD/MM/YYYY" style={{ width: '100%', marginBottom: 10 }} />
+                        <Button type="primary" size="large" block>
+                          Apply Filters
+                          <Icon type="sync" />
+                        </Button>
+                      </Card>
+                    </Col>
+                  </Row>
+                </div>
+              </>
+            )}
+          </Media>
         </Layout.Content>
       </Layout>
     );
