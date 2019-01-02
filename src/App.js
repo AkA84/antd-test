@@ -32,7 +32,8 @@ const dataSource = [...Array(30)].map((i, index) => ({
 export default class App extends React.Component {
   state = {
     collapsed: false,
-    showFilters: true
+    showFilters: true,
+    showMobileMenu: false
   }
 
   onCollapse = () => {
@@ -47,6 +48,12 @@ export default class App extends React.Component {
     }))
   }
 
+  toggleMobileMenuVisibility = value => {
+    this.setState(prevState => ({
+      showMobileMenu: value
+    }))
+  }
+
   render() {
     return (
       <Layout>
@@ -54,6 +61,8 @@ export default class App extends React.Component {
           {matches => (
             <Layout.Sider
               breakpoint="md"
+              trigger={null}
+              collapsedWidth="0"
               width={matches ? 216 : 240}
               theme="light">
               <div style={{ textAlign: 'center' }}>
@@ -68,6 +77,15 @@ export default class App extends React.Component {
         <Media query="(max-width: 1279px)">
           {matches => (
             <Layout.Content style={{ padding: matches ? '25px 16px' : '25px 36px' }}>
+              <Media
+                query="(max-width: 768px)"
+                render={ () => (
+                  <Icon
+                    type={ this.state.showMobileMenu ? 'menu-fold' : 'menu-unfold' }
+                    style={{ fontSize: 32, marginBottom: 32 }}
+                    onClick={this.toggleMobileMenuVisibility.bind(this, true)} />
+                  )}
+              />
               <Breadcrumb style={{ marginBottom: 35 }}>
                 <Breadcrumb.Item>CiviCloud</Breadcrumb.Item>
                 <Breadcrumb.Item>Leave</Breadcrumb.Item>
@@ -137,6 +155,22 @@ export default class App extends React.Component {
               }
             </Layout.Content>
           )}
+        </Media>
+        <Media query="(max-width: 768px)">
+          <Drawer
+          title={null}
+          placement="left"
+          closable={false}
+          visible={this.state.showMobileMenu}
+          onClose={this.toggleMobileMenuVisibility.bind(this, false)}
+          style={{ padding: 0 }}
+          width="216">
+            <Layout.Sider
+              theme="light"
+              width="216">
+              <MainMenu />
+            </Layout.Sider>
+          </Drawer>
         </Media>
       </Layout>
     );
