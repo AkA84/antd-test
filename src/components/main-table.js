@@ -39,7 +39,7 @@ const columns = [
     key: 'actions',
     render: () => (
       <Dropdown overlay={menu}>
-        <Button>
+        <Button size="small">
           Actions <Icon type="ellipsis" style={{ transform: 'rotate(90deg)' }} />
         </Button>
       </Dropdown>

@@ -15,6 +15,10 @@ module.exports = function override (config, env) {
   config = rewireLess.withLoaderOptions({
     modifyVars: {
       '@btn-primary-bg': '#db6f6f',
+      '@btn-height-base': '40px',
+      '@btn-height-lg': '44px',
+      '@btn-height-sm': '32px',
+      '@btn-padding-sm': '0 @padding-xs + 3',
       '@border-radius-base': '3px',
       '@card-radius': '@border-radius-base',
       '@breadcrumb-separator-margin': '0 5px',
