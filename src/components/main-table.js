@@ -72,6 +72,7 @@ export default class MainTable extends React.Component {
       <Media query="(max-width: 1023px)">
         {matches => (
           <Table
+            className="cpc-table-responsive"
             style={{ marginLeft: -24, marginRight: -24 }}
             rowSelection={rowSelection}
             dataSource={this.props.data}
