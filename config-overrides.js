@@ -13,7 +13,16 @@ module.exports = function override (config, env) {
   );
 
   config = rewireLess.withLoaderOptions({
-    // modifyVars: { "@primary-color": "#1DA57A" },
+    modifyVars: {
+      '@btn-primary-bg': '#db6f6f',
+      '@border-radius-base': '3px',
+      '@card-radius': '@border-radius-base',
+      '@breadcrumb-separator-margin': '0 5px',
+      '@menu-item-color': '#828182',
+      '@menu-item-height': '45px',
+      '@menu-item-active-bg': '#EFEFEF',
+      '@menu-highlight-color': '#29bcb8',
+    },
     javascriptEnabled: true
   })(config, env);
 
