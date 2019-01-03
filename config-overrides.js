@@ -22,6 +22,7 @@ module.exports = function override (config, env) {
       '@menu-item-height': '45px',
       '@menu-item-active-bg': '#EFEFEF',
       '@menu-highlight-color': '#29bcb8',
+      '@input-height-base': '37px',
     },
     javascriptEnabled: true
   })(config, env);
