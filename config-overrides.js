@@ -1,4 +1,5 @@
 // const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const rewireWebpackBundleAnalyzer = require('react-app-rewire-webpack-bundle-analyzer')
 const { injectBabelPlugin } = require('react-app-rewired');
 const rewireLess = require('react-app-rewire-less');
 
@@ -11,6 +12,13 @@ module.exports = function override (config, env) {
     ['import', { libraryName: 'ant-design-pro', libraryDirectory: 'lib', style: true, camel2DashComponentName: false }, 'import-antd-pro'],
     config
   );
+
+  if (env === 'production') {
+    config = rewireWebpackBundleAnalyzer(config, env, {
+      analyzerMode: 'static',
+      reportFilename: 'report.html'
+    })
+  }
 
   config = rewireLess.withLoaderOptions({
     modifyVars: {
